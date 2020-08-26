@@ -15,10 +15,6 @@ int main(int argc, char *argv[]){
      * main(){
      *     print(0xAA);
      * }
-     * print(n1, n2){
-     *     n3 = n1 + n2;
-     *     print(n3);
-     * }
      * */
     Word TEST_BIN[] = {
         INS_ENTRY, 0x00,
@@ -26,8 +22,6 @@ int main(int argc, char *argv[]){
         INS_PRINT, 0x00,
         INS_POP, 0x00,
         INS_END, 0x00,
-        
-        //print()
     };
     
     slbin_header header = {sizeof(TEST_BIN)};
