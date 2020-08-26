@@ -66,6 +66,7 @@ int main(void){
 	uint16_t pc = 0;
 	Word *p = phead + pc;
 
+	// 関数内でのbottom位置を指す
 	uint16_t bp = 0;
 
 	DATA_TYPE ret;
