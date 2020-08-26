@@ -11,6 +11,9 @@ all: stm test_bin compiler
 run: stm test_bin
 	$(TARGET_DIR)/stm < $(TARGET_DIR)/stmbin.o
 
+run2: stm test2_bin
+	$(TARGET_DIR)/stm < $(TARGET_DIR)/stmbin.o
+
 stm: $(SRC)
 	mkdir -p $(TARGET_DIR)
 	$(CC) $(CFLAGS) $(INCLUDE) -o $(TARGET_DIR)/stm $(SRC_DIR)/slstm.cpp
@@ -20,6 +23,12 @@ test_bin: $(SRC)
 	$(CC) $(CFLAGS) $(INCLUDE) -o $(TARGET_DIR)/test_bin_gen $(SRC_DIR)/test_bin_gen.cpp
 	rm -f $(TARGET_DIR)/stmbin.o
 	$(TARGET_DIR)/test_bin_gen $(TARGET_DIR)/stmbin.o
+
+test2_bin: $(SRC)
+	mkdir -p $(TARGET_DIR)
+	$(CC) $(CFLAGS) $(INCLUDE) -o $(TARGET_DIR)/test2_bin_gen $(SRC_DIR)/test2_bin_gen.cpp
+	rm -f $(TARGET_DIR)/stmbin.o
+	$(TARGET_DIR)/test2_bin_gen $(TARGET_DIR)/stmbin.o
 
 compiler: $(SRC)
 	mkdir -p $(TARGET_DIR)

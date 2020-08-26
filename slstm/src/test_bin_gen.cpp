@@ -117,7 +117,8 @@ int main(int argc, char *argv[]){
     
     slbin_header header = {sizeof(TEST_BIN)};
     
-    int fd = open(argv[1], O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+	// バイナリとして，順番に書き出している
+	int fd = open(argv[1], O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
     write(fd, &header, sizeof(slbin_header));
     write(fd, TEST_BIN, sizeof(TEST_BIN));
     close(fd);
