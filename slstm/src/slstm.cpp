@@ -59,6 +59,7 @@ int main(void){
     std::uint16_t buf[BUF_SIZE] = {0};
     read(0, buf, BUF_SIZE);
     
+		// 定められた順番に沿って，バイト列を変数に読み込む
     slbin_header *header = (slbin_header *)buf;
     Word *phead = (Word *)(header + 1);
     
