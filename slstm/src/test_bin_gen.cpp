@@ -101,7 +101,7 @@ int main(int argc, char *argv[]){
         INS_POP, 0x00,
         
         //update loop veriable
-        INS_LOADL, 0x00
+        INS_LOADL, 0x00,
         INS_PUSH, 0x01,
         INS_ADD, 0x00,
         INS_STOREL, 0x00,
